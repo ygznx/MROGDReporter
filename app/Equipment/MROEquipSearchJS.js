@@ -8,54 +8,78 @@
  * Controller of the ourAppApp
  */
 angular.module('ourAppApp')
-  .controller('EquipSearchCtr',function($scope){
-    var self =this
+  .controller('EquipSearchCtr', function ($scope, $http) {
+    //  .controller('MainCtrl', function ($scope, $http) {
+    var self = this;
+    var maintenanceItems;
+
     $scope.textaa="abcd"
     $scope.rStr="no value"
-    $scope.EquipNameInput = {text:"abc"}
-
+    $scope.EquipNameInput = {text:"泵"}
+    $scope.FaultDescription = {detailFault:"n"}
+    var serverAddress = "http://localhost:57148/api/MROData/GetMROTableList?Like=" ;
+    $scope.urldata =  "http://localhost:57148/api/MROData/GetMROTableList?Like=" + $scope.EquipNameInput.text;
     $scope.GetDataSourceUrl={function(){
       return "http://localhost:57148/api/MROData/GetMROTableList?Like=" + $scope.EquipNameInput.text;
     }}
 
-    $scope.urldata =  "http://localhost:57148/api/MROData/GetMROTableList?Like=" + $scope.EquipNameInput.text;
+    /*************************** Maintenance Table  **********************************/
+    self.maintenanceDataSource = new kendo.data.DataSource({
+      transport: {
+        dataType: "jsonp",
+        read: function(e){
+          $http.get( serverAddress + $scope.EquipNameInput.text).then(function(response){
+            self.maintenanceItems = response.data;
+            e.success(self.maintenanceItems);
+            console.log(self.maintenanceItems);
+           })}
 
-    $scope.mainGridOptions = {
-      selectable: "row",
-      persistSelection: true,
-      dataSource: {
-
-        transport: {
-          read:  $scope.urldata ,
-          dataType: "jsonp"
         },
+       pageSize: 10,
         schema: {
-          model: { id: "ID" }
-        }
+          model: { id: "EquipCOMOSID" }
+        },
+    } )
 
+    self.tableMaintenanceOptions={
+
+      selectable: "row",
+      pageable: {
+        buttonCount: 5
       },
+      persistSelection: true,
 
       columns: [{
         field: "Name",
+        title: "COMOS Name",
+        width: "120px"
+      },{
+        field: "Workshop",
         title: "Workshop",
         width: "120px"
       },{
         field: "ID",
         title: "Equip ID",
-        width: "120px"
+        width: "180px"
       },{
         field: "Description",
+        title: "Equip Name",
         width: "120px"
       },{
         field: "TypeClass",
+        title: "Equip Type",
         width: "120px"
       },{
-        field: "TypeClass"
-      }]
+        field: "EquipCOMOSID",
+        title: "Equip COMOSID",
+        width: "120px"
+      }
+      ]
     };
 
-    $scope.SelectedEquip = function(){
-      return mainGridOptions.selectedKeyNames();
+    $scope.GetSelectedEquip=function(){
+      var grid = $("#grid").data("kendoGrid");
+      return grid.selectedKeyNames();
     }
 
     $scope.CheckStatusSearch =function(){
@@ -68,7 +92,8 @@ angular.module('ourAppApp')
       console.log($scope.mainGridOptions);
      // $scope.mainGridOptions.dataSource.transport.read;
       var grid = $("#grid").data("kendoGrid");
-      grid.dataSource.read();
+      self.maintenanceDataSource.read();
+      //grid.dataSource.read();
       grid.refresh();
       //[‎5/‎29/‎2018 10:30 AM] Gu, Yuanhao (PD PA AE CIS S CN):
      // $('#GridName').data('kendoGrid').dataSource.read();
@@ -81,8 +106,30 @@ angular.module('ourAppApp')
       //var row = grid.select("tr:eq(2)");
       //var data = grid.dataItem(row);
       //console.log(row); // displays "Jane Doe"
+    }
 
+    var createGDURL="http://localhost:57148/api/MROData/PostCreateGD"
+    $scope.CreateGD=function(){
+      var grid = $("#grid").data("kendoGrid");
+      var itemval = grid.selectedKeyNames();
+      var fautldescrption =$scope.FaultDescription.detailFault;
+      console.log(fautldescrption);
+      console.log(itemval);
+      var dataGD= {
+        "EquipmentID":itemval[0],
+        "EquipCOMOSID":itemval[0],
+        "Submitter":"UWOP6W",
+        "FaultDescription":fautldescrption,
+        "MaintainanceManager":"DONGYONGMING",
+      }
 
+      var responseCGD=""
+      $http.post(createGDURL,dataGD).then(function(response){
+        responseCGD=response;
+        console.log(responseCGD);
+      },function(error){
+        console.log(error);
+      })
     }
 
   })
