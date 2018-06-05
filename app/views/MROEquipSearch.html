@@ -2,7 +2,7 @@
   <div class="header">
     <li>Equipment search</li>
   </div>
-  <div ng-app="ourAppApp">
+  <div>
     <div ng-controller="EquipSearchCtr as equipctr">
       <div class="demo-section k-content">
         <ul class="fieldlist">
@@ -21,28 +21,6 @@
       <button ng-click="CheckStatusSearch()">Output to console</button>
       <button ng-click="CreateGD()">Creaate GD</button>
       <kendo-grid id="grid"  options="equipctr.tableMaintenanceOptions"  k-data-source="equipctr.maintenanceDataSource">
-        <!--
-        <div>
-       <div k-detail-template>
-         <kendo-tabstrip>
-           <ul>
-             <li class="k-state-active">Orders</li>
-             <li>Contact information</li>
-           </ul>
-           <div>
-             <div kendo-grid k-options="detailGridOptions(dataItem)"></div>
-           </div>
-
-             <ul class="contact-info-form">
-               <li><label>Country:</label> <input class="k-textbox" ng-model="dataItem.Country" /></li>
-               <li><label>City:</label> <input class="k-textbox" ng-model="dataItem.City" /></li>
-               <li><label>Address:</label> {{dataItem.Address}}</li>
-               <li><label>Home phone:</label> {{dataItem.HomePhone}}</li>
-             </ul>
-           </div>
-          </kendo-tabstrip>
-        </div>
-        -->
       </kendo-grid>
 
     </div>
