@@ -31,7 +31,7 @@ angular
         controllerAs: 'about'
       })
       .when('/EquipSearch', {
-        templateUrl: 'Equipment/MROEquipSearch.html',
+        templateUrl: 'views/MROEquipSearch.html',
         controller: 'MroctrlCtrl',
         controllerAs: 'MroctrlCtrl'
       })
