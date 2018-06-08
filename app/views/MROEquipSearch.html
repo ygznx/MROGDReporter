@@ -1,0 +1,46 @@
+<div>
+  <div class="header">
+    <li>Equipment search</li>
+  </div>
+  <div>
+    <div ng-controller="EquipSearchCtr as equipctr">
+      <div class="demo-section k-content">
+        <ul class="fieldlist">
+          <li>
+            <label for="simple-input">设备名称</label>
+            <input id="simple-input" type="text" class="k-textbox"  ng-model="EquipNameInput.text"/>
+          </li>
+          <li style="margin-top: 20px;">
+            <label for="simple-textarea">故障描述</label>
+            <textarea id="simple-textarea" class="k-textbox" ng-model="FaultDescription.detailFault"></textarea>
+          </li>
+        </ul>
+      </div>
+      <p ng-bind="rStr" ng-show="rStr"></p>
+
+      <button ng-click="CheckStatusSearch()">Output to console</button>
+      <button ng-click="CreateGD()">Create GD</button>
+      <kendo-grid id="grid"  options="equipctr.tableMaintenanceOptions"  k-data-source="equipctr.maintenanceDataSource">
+      </kendo-grid>
+
+    </div>
+    <style>
+      .contact-info-form {
+        list-style-type: none;
+        margin: 30px 0;
+        padding: 0;
+      }
+
+      .contact-info-form li {
+        margin: 10px 0;
+      }
+
+      .contact-info-form label {
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+        font-weight: bold;
+      }
+    </style>
+  </div>
+</div>

@@ -20,22 +20,17 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
       .when('/EquipSearch', {
-        templateUrl: 'Equipment/MROEquipSearch.html',
-        controller: 'MroctrlCtrl',
-        controllerAs: 'MroctrlCtrl'
+        templateUrl: 'views/MROEquipSearch.html',
+        controller: 'EquipSearchCtr',
+        controllerAs: 'EquipSearchCtr'
+      })
+      .when('/equipesearchcomosctr', {
+        templateUrl: 'views/equipesearchcomosctr.html',
+        controller: 'EquipesearchcomosctrCtrl',
+        controllerAs: 'EquipesearchcomosctrCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/EquipSearch'
       });
   });
