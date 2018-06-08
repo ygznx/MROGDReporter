@@ -8,15 +8,15 @@
         <ul class="fieldlist">
           <li>
             <label for="simple-input">设备名称</label>
-            <input id="simple-input" type="text" class="k-textbox" style="width: 100%;"  ng-model="EquipNameInput.text"/>
+            <input id="simple-input" type="text" class="k-textbox"  ng-model="EquipNameInput.text"/>
           </li>
-          <li>
+          <li style="margin-top: 20px;">
             <label for="simple-textarea">故障描述</label>
-            <textarea id="simple-textarea" class="k-textbox" style="width: 100%;"  ng-model="FaultDescription.detailFault"></textarea>
+            <textarea id="simple-textarea" class="k-textbox" ng-model="FaultDescription.detailFault"></textarea>
           </li>
         </ul>
       </div>
-      <p ng-bind="rStr" ></p>
+      <p ng-bind="rStr" ng-show="rStr"></p>
 
       <button ng-click="CheckStatusSearch()">Output to console</button>
       <button ng-click="CreateGD()">Create GD</button>

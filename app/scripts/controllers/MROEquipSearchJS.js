@@ -14,21 +14,16 @@ angular.module('ourAppApp')
     var maintenanceItems;
 
     $scope.textaa="abcd"
-    $scope.rStr="no value"
+    $scope.rStr;
     $scope.EquipNameInput = {text:"泵"}
     $scope.FaultDescription = {detailFault:"n"}
-    var serverAddress = "http://localhost:57148/api/MROData/GetMROTableList?Like=" ;
-    $scope.urldata =  "http://localhost:57148/api/MROData/GetMROTableList?Like=" + $scope.EquipNameInput.text;
-    $scope.GetDataSourceUrl={function(){
-      return "http://localhost:57148/api/MROData/GetMROTableList?Like=" + $scope.EquipNameInput.text;
-    }}
-
     /*************************** Maintenance Table  **********************************/
     self.maintenanceDataSource = new kendo.data.DataSource({
       transport: {
         dataType: "jsonp",
         read: function(e){
-          $http.get( serverAddress + $scope.EquipNameInput.text).then(function(response){
+          console.log(serverAddress + "GetMROTableList?Like=" + $scope.EquipNameInput.text)
+          $http.get( serverAddress + "GetMROTableList?Like=" + $scope.EquipNameInput.text).then(function(response){
             self.maintenanceItems = response.data;
             e.success(self.maintenanceItems);
             console.log(self.maintenanceItems);

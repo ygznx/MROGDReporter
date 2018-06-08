@@ -5,15 +5,15 @@
                 <ul class="fieldlist">
                 <li>
                     <label for="simple-input">设备名称</label>
-                    <input id="simple-input" type="text" class="k-textbox" style="width: 100%;"  ng-model="EquipNameInput.text"/>
+                    <input id="simple-input" type="text" class="k-textbox" ng-model="EquipNameInput.text"/>
                 </li>
-                <li>
+                <li style="margin-top: 20px;">
                     <label for="simple-input">设备编号</label>
-                    <input id="simple-input2" type="text" class="k-textbox" style="width: 100%;"  ng-model="EquipIDInput.text"/>
+                    <input id="simple-input2" type="text" class="k-textbox"  ng-model="EquipIDInput.text"/>
                 </li>
                 </ul>
             </div>
-            <p ng-bind="rStr" ></p>
+            <p ng-bind="rStr" ng-show="rStr"></p>
             <kendo-grid id="grid"  options="equipctr.tableMaintenanceOptions"  k-data-source="equipctr.maintenanceDataSource">
 
             </kendo-grid>
