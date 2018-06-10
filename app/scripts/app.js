@@ -25,7 +25,7 @@ angular
         controller: 'EquipSearchCtr',
         controllerAs: 'EquipSearchCtr'
       })
-      .when('/equipesearchcomosctr', {
+      .when('/reportEvent', {
         templateUrl: 'views/equipesearchcomosctr.html',
         controller: 'EquipesearchcomosctrCtrl',
         controllerAs: 'EquipesearchcomosctrCtrl'

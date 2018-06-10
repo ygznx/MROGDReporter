@@ -21,21 +21,14 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header" ng-controller="HeaderctrlCtrl">
+    <div class="header " ng-controller="HeaderctrlCtrl">
 
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-
-          <div class="navbar-header">
-
-            <a class="navbar-brand" style="cursor:context-menu;">MRO</a>
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav"  id="nav">
-              <li class="active"><a ng-href="#!EquipSearch">EquipSearch</a></li>
-              <li><a ng-href="#!equipesearchcomosctr">Comos</a></li>
+      <div class="panel panel-primary " role="navigation">
+        <div class="container ">
+          <div class="panel" id="js-navbar-collapse">
+            <ul class="nav navbar-nav "  id="nav">
+              <li class="active"><a ng-href="#!reportEvent"><h3>报修</h3></a></li>
+              <li ><a ng-href="#!EquipSearch"><h3>设备查询</h3></a></li>
             </ul>
           </div>
         </div>
@@ -44,12 +37,6 @@
 
     <div class="container">
     <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> This is MRO test case.</p>
-      </div>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -78,7 +65,7 @@
         <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.rtl.min.css"/>
         <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.silver.min.css"/>
         <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.mobile.all.min.css"/>
-<!-- 
+<!--
         <script src="https://kendo.cdn.telerik.com/2018.2.516/js/kendo.all.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script> -->
 
