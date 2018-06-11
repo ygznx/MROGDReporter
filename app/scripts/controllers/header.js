@@ -9,10 +9,48 @@
  */
 angular.module('ourAppApp')
   .controller('HeaderctrlCtrl', function ($scope) {
-    $(function() {
-      $('#nav li').click(function() {
-         $('#nav li').removeClass();
-         $($(this).addClass('active'));
-      });
-   });
+    var self = this;
+    self.EquipSearchClass= function(){
+      let tmp = window.location.href.split('/');
+      let currentPage = tmp[tmp.length -1]
+      if(currentPage == "EquipSearch"){
+        return 'nav-item active'
+      }
+      else{
+        return 'nav-item';
+      }
+    }
+
+    self.sparePartRouteClass= function(){
+      let tmp = window.location.href.split('/');
+      let currentPage = tmp[tmp.length -1]
+      console.log(currentPage);
+      if(currentPage == "sparePartRoute"){
+        return 'nav-item active'
+      }
+      else{
+        return 'nav-item';
+      }
+    }
+
+    self.reportEventClass= function(){
+      let tmp = window.location.href.split('/');
+      let currentPage = tmp[tmp.length -1]
+      console.log(currentPage);
+      if(currentPage == "reportEvent"){
+        return 'nav-item active'
+      }
+      else{
+        return 'nav-item';
+      }
+    }
+
+
+    // $(function() {
+    //   $('#nav li').click(function() {
+    //      $('#nav li').removeClass();
+    //      $($(this).addClass('active'));
+    //   });
+    // });
+
   });
