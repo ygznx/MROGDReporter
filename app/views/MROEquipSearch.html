@@ -1,25 +1,50 @@
 <div>
-  <div class="header">
-    <li>Equipment search</li>
-  </div>
   <div>
     <div ng-controller="EquipSearchCtr as equipctr">
-      <div class="demo-section k-content">
-        <ul class="fieldlist">
-          <li>
-            <label for="simple-input">设备名称</label>
-            <input id="simple-input" type="text" class="k-textbox"  ng-model="EquipNameInput.text"/>
-          </li>
-          <li style="margin-top: 20px;">
-            <label for="simple-textarea">故障描述</label>
-            <textarea id="simple-textarea" class="k-textbox" ng-model="FaultDescription.detailFault"></textarea>
-          </li>
-        </ul>
+      <div class="container">
+        <div class="row ">
+          <div class="col-sm-8">
+            <div class="row ">
+              <label class="col-sm-2" for="simple-input">设备名称:</label>
+              <input id="simple-input" type="text" class="col-sm-3" ng-model="EquipNameInput.text"/>
+              <label class="col-sm-2" for="simple-input2">设备编号:</label>
+              <input  id="simple-input2" type="text" class="col-sm-3"  ng-model="EquipIDInput.text"/>
+            </div>
+            <p/>
+            <div class="row ">
+              <label class="col-sm-2" for="simple-input4">管理部门:</label>
+              <select ng-model="equipctr.selectDepartment"
+                      class="col-sm-3"
+                      id="simple-input4"
+                      ng-change="equipctr.updateEquipTypeOptions()"
+                      ng-options="c.label for c in equipctr.equpDepartment">
+              </select>
+              <label class="col-sm-2" for="simple-input5">设备类型:</label>
+              <select ng-model="equipctr.selectedEquipType"
+                      class="col-sm-3"
+                      id="simple-input5"
+                      ng-options="c.label for c in equipctr.equipTypeOption">
+              </select>
+            </div>
+            <p/>
+            <div class="row">
+              <label class="col-sm-2" for="simple-textarea">故障描述:</label>
+              <textarea placeholder="请输入故障描述。" id="simple-textarea" class=" col-sm-8" ng-model="FaultDescription.detailFault"></textarea>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="row ">
+              <button  id="simple-input3" class="col-sm-5 btn btn-success" ng-click="CheckStatusSearch()">查询</button>
+            </div>
+            <p/>
+            <div class="row ">
+              <button  class="col-sm-5 btn btn-success" ng-click="CreateGD()">报修</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <p ng-bind="rStr" ng-show="rStr"></p>
 
-      <button ng-click="CheckStatusSearch()">Output to console</button>
-      <button ng-click="CreateGD()">Create GD</button>
+      <h3>可选设备</h3>
       <kendo-grid id="grid"  options="equipctr.tableMaintenanceOptions"  k-data-source="equipctr.maintenanceDataSource">
       </kendo-grid>
 

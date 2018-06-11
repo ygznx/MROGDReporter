@@ -1,0 +1,30 @@
+<div>
+  <div >
+    <div ng-controller="SparepartsearchCtrl as sCrl">
+      <div class="container">
+        <div class="row ">
+          <div class="col-sm-8">
+            <div class="row ">
+              <label class="col-sm-2" for="simple-input">备件名称:</label>
+              <input id="simple-input" type="text" class="k-textbox col-sm-5" ng-model="sCrl.EquipNameInput.text"/>
+              <label class="col-sm-2" for="simple-input2">备件编号:</label>
+              <input  id="simple-input2" type="text" class="k-textbox col-sm-4"  ng-model="sCrl.EquipIDInput.text"/>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="row ">
+              <button class="col-sm-5 btn btn-success" ng-click="sCrl.CheckStatusSearch()">查询</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>备件列表</h3>
+      <kendo-grid id="gridSpare"  options="sCrl.tableMaintenanceOptions"  k-data-source="sCrl.maintenanceDataSource">
+
+      </kendo-grid>
+
+
+    </div>
+  </div>
+</div>

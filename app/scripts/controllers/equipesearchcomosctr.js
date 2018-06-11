@@ -15,9 +15,9 @@ angular.module('ourAppApp')
 
       $scope.textaa="abcd"
       $scope.rStr;
-      $scope.EquipNameInput = {text:"泵"}
-      $scope.EquipIDInput = {text:"A"}
-      $scope.FaultDescription = {detailFault:"n"}
+      $scope.EquipNameInput = {text:"泵"};
+      $scope.EquipIDInput = {text:"A"};
+      $scope.FaultDescription = {detailFault:""};
       //selected options
     self.equpDepartment = [
         {label: '设备部', id: 1},
@@ -130,7 +130,7 @@ angular.module('ourAppApp')
         // $('#GridName').data('kendoGrid').dataSource.read();
         // $('#GridName').data('kendoGrid').refresh();
 
-        // grid.select("tr:eq(5)");
+         grid.select("tr:eq(0)");
         //console.log(grid.selectedKeyNames()); // displays the id field value for the selected row
 
 
@@ -142,7 +142,7 @@ angular.module('ourAppApp')
       var createGDURL="http://192.168.10.104:50388/api/MROData/PostCreateGD"
       $scope.CreateGD=function(){
 
-        var equipPage = "http://134.244.232.122/WebView/index.html#/ComosJY/projects/U:2:A3BQHFA8AR:/wl/U:42:A42RGSHG8W:/details/item/U:8:A42RKX7M0X:D"
+        var equipPage = "http://192.168.10.116/WebView/index.html#/ComosJY/projects/U:2:A3BQHFA8AR:/wl/U:42:A42RGSHG8W:/details/item/U:8:A42RKX7M0X:D"
         window.location.href=equipPage;
 /*             <!-- var grid = $("#grid").data("kendoGrid");
          var itemval = grid.selectedKeyNames();

@@ -20,15 +20,20 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/EquipSearch', {
+      .when('/reportEvent', {
         templateUrl: 'views/MROEquipSearch.html',
         controller: 'EquipSearchCtr',
         controllerAs: 'EquipSearchCtr'
       })
-      .when('/reportEvent', {
+      .when('/EquipSearch', {
         templateUrl: 'views/equipesearchcomosctr.html',
         controller: 'EquipesearchcomosctrCtrl',
         controllerAs: 'EquipesearchcomosctrCtrl'
+      })
+      .when('/sparePartRoute', {
+        templateUrl: 'views/sparepartsearch.html',
+        controller: 'SparepartsearchCtrl',
+        controllerAs: 'sparePartSearch'
       })
       .otherwise({
         redirectTo: '/EquipSearch'
