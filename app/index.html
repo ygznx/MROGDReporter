@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css" type="text/html">
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="./styles/kendo.common.min.css">
+    <link rel="stylesheet" href="./styles/kendo.rtl.min.css">
+    <link rel="stylesheet" href="./styles/kendo.silver.min.css">
+    <link rel="stylesheet" href="./styles/kendo.mobile.all.min.css">
     <!-- endbuild -->
   </head>
   <body ng-app="ourAppApp">
@@ -56,6 +59,7 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/MROEquipSearchJS.js"></script>
         <script src="js/kendo.all.min.js"></script>
@@ -64,13 +68,6 @@
         <script src="config.js"></script>
         <script src="scripts/controllers/sparepartsearch.js"></script>
         <!-- endbuild -->
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.common.min.css"/>
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.rtl.min.css"/>
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.silver.min.css"/>
-        <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.516/styles/kendo.mobile.all.min.css"/>
-<!--
-        <script src="https://kendo.cdn.telerik.com/2018.2.516/js/kendo.all.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script> -->
 
 </body>
 </html>
