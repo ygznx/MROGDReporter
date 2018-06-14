@@ -152,6 +152,6 @@ angular.module('ourAppApp')
 
         var equipPage = "http://192.168.10.116/WebView/index.html#/ComosJY/projects/U:2:A3BQHFA8AR:/wl/U:42:A42RGSHG8W:/details/item/U:8:A42RKX7M0X:D"
         window.location.href=equipPage;
-/*
+
       }
   });
