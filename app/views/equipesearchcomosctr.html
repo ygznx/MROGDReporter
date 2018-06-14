@@ -2,36 +2,47 @@
     <div >
         <div ng-controller="EquipesearchcomosctrCtrl as equipctr">
             <div class="container">
-              <div class="row ">
-                <div class="col-sm-8">
-                  <div class="row ">
-                    <label class="col-sm-2" for="simple-input">设备名称:</label>
-                    <input id="simple-input" type="text" class="col-sm-2" ng-model="EquipNameInput.text"/>
-                    <label class="col-sm-2" for="simple-input2">设备编号:</label>
-                    <input  id="simple-input2" type="text" class="col-sm-2"  ng-model="EquipIDInput.text"/>
-                  </div>
-                  <p/>
-                  <div class="row ">
-                    <label class="col-sm-2" for="simple-input4">管理部门:</label>
-                    <select ng-model="equipctr.selectDepartment"
-                            class="col-sm-2"
-                            id="simple-input4"
-                            ng-change="equipctr.updateEquipTypeOptions()"
-                            ng-options="c.label for c in equipctr.equpDepartment">
-                    </select>
-                    <label class="col-sm-2" for="simple-input5">设备类型:</label>
-                    <select ng-model="equipctr.selectedEquipType"
-                            class="col-sm-2"
-                            id="simple-input5"
-                            ng-options="c.label for c in equipctr.equipTypeOption">
-                    </select>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="row ">
-                    <button  id="simple-input3" class="col-sm-5 btn btn-success" ng-click="CheckStatusSearch()">查询</button>
-                  </div>
-                </div>
+              <div class="row">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-8">
+                            <div class="col-sm-6">
+                                <label  for="simple-input">设备名称:</label>
+                                <input id="simple-input" type="text" ng-model="EquipNameInput.text"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="simple-input2">设备编号:</label>
+                                <input  id="simple-input2" type="text" ng-model="EquipIDInput.text"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8 col-md-8">
+                            <div class="col-sm-6">
+                                <label for="simple-input4">管理部门:</label>
+                                <select ng-model="equipctr.selectDepartment"
+                                        id="simple-input4"
+                                        ng-change="equipctr.updateEquipTypeOptions()"
+                                        ng-options="c.label for c in equipctr.equpDepartment">
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="simple-input5">设备类型:</label>
+                                <select ng-model="equipctr.selectedEquipType"
+                                        id="simple-input5"
+                                        ng-options="c.label for c in equipctr.equipTypeOption">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-10">
+                        </div>
+                        <div class="col-sm-2">
+                            <button  id="simple-input3" class=" btn btn-success" ng-click="CheckStatusSearch()">查询</button>
+                        </div>
+                    </div>
+                  
+
               </div>
             </div>
 
@@ -43,17 +54,17 @@
             <p></p>
             
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-sm-3 col-md-6">
               </div>
-              <div class="col-md-6">
-                  <div class="col-md-3"></div>
-                  <div class="col-md-3">
+              <div class="col-sm-9 col-md-6">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-3">
                       <button ng-click="equipctr.goToComosEquipIDWeb()" class="btn btn-success">导航到维护对象</button>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                       <button ng-click="equipctr.goToselectedPIDSYSUID()" class="btn btn-success">导航到工艺对象</button>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-sm-3">
                       <button ng-click="equipctr.goToselectedPIDSYSUID()" class="btn btn-success">导航到电器对象</button>
                     </div>
               </div>
