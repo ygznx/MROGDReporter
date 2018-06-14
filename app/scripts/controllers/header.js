@@ -43,6 +43,17 @@ angular.module('ourAppApp')
       }
     }
 
+    self.workordermanagementClass= function(){
+      let tmp = window.location.href.split('/');
+      let currentPage = tmp[tmp.length -1]
+      if(currentPage == "workordermanagement"){
+        return 'nav-item active'
+      }
+      else{
+        return 'nav-item';
+      }
+    }
+
 
     // $(function() {
     //   $('#nav li').click(function() {

@@ -35,6 +35,11 @@ angular
         controller: 'SparepartsearchCtrl',
         controllerAs: 'sparePartSearch'
       })
+      .when('/workordermanagement', {
+        templateUrl: 'views/workOrderManagement.html',
+        controller: 'WorkorderManagementCtrl',
+        controllerAs: 'WorkorderManagementCtrl'
+      })
       .otherwise({
         redirectTo: '/EquipSearch'
       });
