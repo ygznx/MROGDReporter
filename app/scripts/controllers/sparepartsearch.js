@@ -49,7 +49,7 @@ angular.module('ourAppApp')
       },{
         field: "ID",
         title: "Equip ID",
-        width: "180px"
+        width: "80px"
       },{
         field: "Description",
         title: "名称",
@@ -57,11 +57,27 @@ angular.module('ourAppApp')
       },{
         field: "TypeClass",
         title: "规格",
-        width: "120px"
+        width: "130px"
+      },{
+        field: "Price",
+        title: "价格",
+        width: "80px"
+      },{
+        field: "Count",
+        title: "数量",
+        width: "80px"
+      },{
+        field: "LowLimit",
+        title: "最低库存值",
+        width: "100px"
+      },{
+        field: "HighLimit",
+        title: "最高库存值",
+        width: "100px"
       },{
         field: "EquipCOMOSID",
         title: "COMOS ID",
-        width: "120px"
+        width: "100px"
       }
       ]
     };

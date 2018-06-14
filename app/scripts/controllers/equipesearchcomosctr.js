@@ -103,6 +103,14 @@ angular.module('ourAppApp')
           field: "EquipCOMOSID",
           title: "Equip COMOSID",
           width: "120px"
+        },{
+          field: "PIDSYSUID",
+          title: "工艺对象ID",
+          width: "120px"
+        },{
+          field: "ELECTRICUID",
+          title: "电器对象ID",
+          width: "120px"
         }
         ]
       };
@@ -144,26 +152,6 @@ angular.module('ourAppApp')
 
         var equipPage = "http://192.168.10.116/WebView/index.html#/ComosJY/projects/U:2:A3BQHFA8AR:/wl/U:42:A42RGSHG8W:/details/item/U:8:A42RKX7M0X:D"
         window.location.href=equipPage;
-/*             <!-- var grid = $("#grid").data("kendoGrid");
-         var itemval = grid.selectedKeyNames();
-         var fautldescrption =$scope.FaultDescription.detailFault;
-         console.log(fautldescrption);
-         console.log(itemval);
-         var dataGD= {
-           "EquipmentID":itemval[0],
-           "EquipCOMOSID":itemval[0],
-           "Submitter":"UWOP6W",
-           "FaultDescription":fautldescrption,
-           "MaintainanceManager":"DONGYONGMING",
-         }
-
-         var responseCGD=""
-         $http.post(createGDURL,dataGD).then(function(response){
-           responseCGD=response;
-           console.log(responseCGD);
-         },function(error){
-           console.log(error);
-         })
-         --> */
+/*
       }
   });
