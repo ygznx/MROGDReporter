@@ -24,7 +24,6 @@ angular.module('ourAppApp')
     self.sparePartRouteClass= function(){
       let tmp = window.location.href.split('/');
       let currentPage = tmp[tmp.length -1]
-      console.log(currentPage);
       if(currentPage == "sparePartRoute"){
         return 'nav-item active'
       }
@@ -36,7 +35,6 @@ angular.module('ourAppApp')
     self.reportEventClass= function(){
       let tmp = window.location.href.split('/');
       let currentPage = tmp[tmp.length -1]
-      console.log(currentPage);
       if(currentPage == "reportEvent"){
         return 'nav-item active'
       }

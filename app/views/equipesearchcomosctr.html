@@ -36,16 +36,30 @@
             </div>
 
             <h3>设备列表</h3>
-            <kendo-grid id="grid"  options="equipctr.tableMaintenanceOptions"  k-data-source="equipctr.maintenanceDataSource">
+            <kendo-grid id="grid"  options="equipctr.tableMaintenanceOptions"  
+              k-data-source="equipctr.maintenanceDataSource">
 
             </kendo-grid>
             <p></p>
-          <div class="container">
-            <div class="row ">
-              <p class="col-sm-8"></p>
-              <button ng-click="CreateGD()" class="col-sm-2 btn btn-success">导航到报修界面</button>
+            
+            <div class="row">
+              <div class="col-md-6">
+              </div>
+              <div class="col-md-6">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-3">
+                      <button ng-click="equipctr.goToComosEquipIDWeb()" class="btn btn-success">导航到维护对象</button>
+                    </div>
+                    <div class="col-md-3">
+                      <button ng-click="equipctr.goToselectedPIDSYSUID()" class="btn btn-success">导航到工艺对象</button>
+                    </div>
+                    <div class="col-md-3">
+                      <button ng-click="equipctr.goToselectedPIDSYSUID()" class="btn btn-success">导航到电器对象</button>
+                    </div>
+              </div>
             </div>
-          </div>
+
+            
 
         </div>
     </div>

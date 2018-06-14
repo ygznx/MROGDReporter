@@ -12,6 +12,9 @@ angular.module('ourAppApp')
     //  .controller('MainCtrl', function ($scope, $http) {
       var self = this;
       var maintenanceItems;
+      var selectedComosEquipID;
+      var selectedPIDSYSUID;
+      var selectedELECTRICUID;
 
       $scope.textaa="abcd"
       $scope.rStr;
@@ -78,7 +81,6 @@ angular.module('ourAppApp')
           buttonCount: 5
         },
         persistSelection: true,
-
         columns: [{
           field: "Name",
           title: "COMOS Name",
@@ -112,9 +114,16 @@ angular.module('ourAppApp')
           title: "电器对象ID",
           width: "120px"
         }
-        ]
+        ],
+        change:function(){
+          var gview = $("#grid").data("kendoGrid");
+          //Getting selected item
+          var selectedItem = gview.dataItem(gview.select());
+          self.selectedComosEquipID = selectedItem.EquipCOMOSID
+          self.selectedELECTRICUID = selectedItem.ELECTRICUID
+          self.selectedPIDSYSUID = selectedItem.PIDSYSUID
+        }
       };
-
 
       $scope.GetSelectedEquip=function(){
         var grid = $("#grid").data("kendoGrid");
@@ -148,10 +157,48 @@ angular.module('ourAppApp')
       }
 
       var createGDURL="http://192.168.10.104:50388/api/MROData/PostCreateGD"
-      $scope.CreateGD=function(){
-
-        var equipPage = "http://192.168.10.116/WebView/index.html#/ComosJY/projects/U:2:A3BQHFA8AR:/wl/U:42:A42RGSHG8W:/details/item/U:8:A42RKX7M0X:D"
-        window.location.href=equipPage;
-
+      self.goToComosEquipIDWeb=function(){
+        console.log(self.selectedComosEquipID);
+        console.log(self.selectedELECTRICUID);
+        console.log(self.selectedPIDSYSUID);
+        if(self.selectedComosEquipID != null && self.selectedComosEquipID !=""){
+          window.location.href=equipPage + self.selectedComosEquipID + ":D";
+        }
+        else{
+          alert("不存在对应的导航对象")
+        }
       }
+      self.goToComosEquipIDWeb=function(){
+        if(self.selectedComosEquipID != null && self.selectedComosEquipID !=""){
+          console.log(self.selectedComosEquipID);
+          window.location.href=equipPage + self.selectedComosEquipID + ":D";
+        }
+        else{
+          alert("不存在对应的导航对象")
+        }
+      }
+
+      self.goToselectedPIDSYSUID=function(){
+        console.log(self.selectedComosEquipID);
+        console.log(self.selectedELECTRICUID);
+        if(self.selectedPIDSYSUID != null && self.selectedPIDSYSUID !=""){
+          console.log(self.selectedPIDSYSUID);
+          window.location.href=equipPage + self.selectedPIDSYSUID + ":D";
+        }
+        else{
+          alert("不存在对应的导航对象")
+        }
+      }
+
+      self.goToselectedPIDSYSUID=function(){
+        if(self.selectedELECTRICUID != null && self.selectedELECTRICUID !=""){
+          console.log(self.selectedELECTRICUID);
+          window.location.href=equipPage + self.selectedELECTRICUID + ":D";
+        }
+        else{
+          alert("不存在对应的导航对象")
+        }
+      }
+
+
   });
