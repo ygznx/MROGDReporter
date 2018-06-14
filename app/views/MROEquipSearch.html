@@ -5,26 +5,32 @@
         <div class="row ">
           <div class="col-sm-9">
             <div class="row ">
-              <label class="col-sm-2" for="simple-input">设备名称:</label>
-              <input id="simple-input" type="text" class="col-sm-3" ng-model="EquipNameInput.text"/>
-              <label class="col-sm-2" for="simple-input2">设备编号:</label>
-              <input  id="simple-input2" type="text" class="col-sm-3"  ng-model="EquipIDInput.text"/>
+              <div class="col-sm-6">
+                  <label for="simple-input">设备名称:</label>
+                  <input id="simple-input" type="text" ng-model="EquipNameInput.text"/>
+              </div>
+              <div class="col-sm-6">
+                <label for="simple-input2">设备编号:</label>
+                <input  id="simple-input2" type="text" ng-model="EquipIDInput.text"/>
+              </div>
             </div>
             <p/>
             <div class="row ">
-              <label class="col-sm-2" for="simple-input4">管理部门:</label>
-              <select ng-model="equipctr.selectDepartment"
-                      class="col-sm-3"
-                      id="simple-input4"
-                      ng-change="equipctr.updateEquipTypeOptions()"
-                      ng-options="c.label for c in equipctr.equpDepartment">
-              </select>
-              <label class="col-sm-2" for="simple-input5">设备类型:</label>
-              <select ng-model="equipctr.selectedEquipType"
-                      class="col-sm-3"
-                      id="simple-input5"
-                      ng-options="c.label for c in equipctr.equipTypeOption">
-              </select>
+              <div class="col-sm-6">
+                  <label for="simple-input4">管理部门:</label>
+                  <select ng-model="equipctr.selectDepartment"
+                          id="simple-input4"
+                          ng-change="equipctr.updateEquipTypeOptions()"
+                          ng-options="c.label for c in equipctr.equpDepartment">
+                  </select>
+              </div>
+              <div class="col-sm-6">
+                  <label for="simple-input5">设备类型:</label>
+                  <select ng-model="equipctr.selectedEquipType"
+                          id="simple-input5"
+                          ng-options="c.label for c in equipctr.equipTypeOption">
+                  </select>
+              </div>
             </div>
             <p/>
             <div class="row">
