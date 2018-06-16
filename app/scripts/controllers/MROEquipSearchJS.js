@@ -65,7 +65,7 @@ angular.module('ourAppApp')
           })}
 
       },
-      pageSize: 10,
+      pageSize: 6,
       schema: {
         model: { id: "EquipCOMOSID" }
       },

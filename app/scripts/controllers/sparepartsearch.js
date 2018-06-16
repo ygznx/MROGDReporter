@@ -10,7 +10,7 @@
 angular.module('ourAppApp')
   .controller('SparepartsearchCtrl', function ($http) {
     var self=this
-    self.EquipNameInput = {text:"P"};
+    self.EquipNameInput = {text:"阀"};
     self.EquipIDInput = {text:"0"};
 
     /*************************** Maintenance Table  **********************************/
@@ -28,7 +28,7 @@ angular.module('ourAppApp')
           })}
 
       },
-      pageSize: 10,
+      pageSize: 6,
       schema: {
         model: { id: "EquipCOMOSID" }
       },

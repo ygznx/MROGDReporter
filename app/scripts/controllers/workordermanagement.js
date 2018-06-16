@@ -22,10 +22,11 @@ angular.module('ourAppApp')
     /****************  workshop ******************/
     self.workshop = [
       {label: 'A03', id: 1},
-      {label: 'A06', id: 2},
-      {label: 'DONGYONGMING', id: 3},
+      {label: 'A04', id: 2},
+      {label: 'A05', id: 3},
+      {label: 'A06', id: 3},
     ];
-    self.selectedworkshop= self.workshop[2];
+    self.selectedworkshop= self.workshop[0];
     /*************************** Maintenance Table  **********************************/
     self.maintenanceDataSource = new kendo.data.DataSource({
       transport: {

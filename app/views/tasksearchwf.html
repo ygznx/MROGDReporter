@@ -1,0 +1,59 @@
+<div>
+  <div >
+    <div ng-controller="TasksearchwfCtrl as ctrl">
+      <div class="container">
+        <div class="row ">
+          <div class="col-sm-10">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="simple-input1">Task Type:</label>
+                <select ng-model="ctrl.selectTaskType"
+                        id="simple-input1"
+                        ng-options="c.label for c in ctrl.GDWFTaskList">
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label for="simple-input2">任务责任人:</label>
+                <select ng-model="ctrl.resPerson"
+                        id="simple-input2"
+                        ng-options="c.label for c in ctrl.repersonList">
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="simple-input6">维修主管:</label>
+                <select ng-model="ctrl.selectedStatus"
+                        id="simple-input6"
+                        ng-options="c.label for c in ctrl.TASKSTATUSList">
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="row ">
+              <button class="col-sm-5 btn btn-success" ng-click="ctrl.CheckStatusSearch()">查询</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>任务列表</h3>
+      <kendo-grid id="gridTask"  options="ctrl.tableMaintenanceOptions"  k-data-source="ctrl.maintenanceDataSource">
+
+      </kendo-grid>
+      <p></p>
+
+      <div class="row">
+        <div class="col-sm-3 col-md-6">
+        </div>
+        <div class="col-sm-9 col-md-6">
+          <div class="col-sm-8"></div>
+          <div class="col-sm-3">
+            <button ng-click="ctrl.goToTaaskWeb()" class="btn btn-success">导航到任务对象</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

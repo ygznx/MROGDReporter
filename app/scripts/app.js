@@ -40,6 +40,11 @@ angular
         controller: 'WorkorderManagementCtrl',
         controllerAs: 'WorkorderManagementCtrl'
       })
+      .when('/taskSearchWF', {
+        templateUrl: 'views/tasksearchwf.html',
+        controller: 'TasksearchwfCtrl',
+        controllerAs: 'taskSearchWF'
+      })
       .otherwise({
         redirectTo: '/EquipSearch'
       });
